@@ -6,48 +6,49 @@ public class Main {
 		/* Call method to create contact list */
 		ContactList allContacts;
 		allContacts = new ContactList();
-		
-		Scanner userInput= new Scanner(System.in);
+
 		/*
 		 * Asks the user what action is needed to be done
 		 */
-		do {
-			/*
-			 * Create Menu to allows users to choose what they want to do: 
-			 * 1. Enter a new contact 
-			 * 2. Print the Contact List sorted by last name 
-			 * 3. Retrieve a Contact by last name 
-			 * 4. Retrieve a Contact by email 
-			 * 5. Retrieve a Contact by zip 
-			 * q. quit
-			 */
+		String menuChoice;
+		Scanner scan = new Scanner(System.in);
+		do
 
-			
-			//this is just a test
-			if (userInput == '1') {
+		{
 
-				// allContacts.createContact();
-			} else if (userInput == '2') {
-				//System.out.println(getListByLastNameAlpha());
+			Scanner kboard = new Scanner(System.in);
+			System.out.println("---MENU---");
+			System.out.println("What would you like to do?");
+			System.out.println("1) Create a new contact ");
+			System.out
+					.println("2) Get the list by last name in alphabetical order");
+			System.out.println("3) Search for a contact by using a last name");
+			System.out.println("4) Search for a contact by using an email");
+			System.out.println("5) Search for a contact by using a zip code");
+			System.out.println("Q) Quit");
+			System.out.print("-----> ");
+			menuChoice = scan.next();
 
-			} else if (userInput == '3') {
+			// this is just a test
+			if (menuChoice.equals("1")) {
 
-				//allContact.getContactByLastName();
-			} else if (userInput == '4') {
-				//allContact.getContactByEmail();
+				allContacts.createContact();
+			} else if (menuChoice.equals("2")) {
+				allContacts.getListByLastNameAlpha();
 
-			} else if (userInput == '5') {
-				//allContact.getContactByZip();
+			} else if (menuChoice.equals("3")) {
+
+				allContacts.getContactByLastName("");
+			} else if (menuChoice.equals("4")) {
+				allContacts.getContactByEmail("");
+
+			} else if (menuChoice.equals("5")) {
+				allContacts.getContactByZip("");
 
 			}
 
-		} while (userinput != 'q');
+		} while (!menuChoice.equalsIgnoreCase("q"));
 	}
-
-	
 
 }
 
-
-/* FAKE RECORDING
- */
