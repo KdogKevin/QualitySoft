@@ -23,7 +23,7 @@ public class Main {
 			 */
 
 			
-			//test test
+			//this is just a test
 			if (userInput == '1') {
 
 				// allContacts.createContact();
