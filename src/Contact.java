@@ -2,7 +2,8 @@
  * One Object of a Contact Stores the info for a single contact
  *
  */
-public class Contact {
+public class Contact implements Comparable
+{
 	private String emailAddress;
 	private String phoneNumber;
 	private String note;
@@ -52,10 +53,21 @@ public class Contact {
 
 	}
 
+
+
 	/**
 	 * returns a contact object in a formatted String
 	 */
 	public String toString() {
 		return "";
+	}
+
+	/**
+	 * compares newName to the lastName of the contact
+	 * returns less than 0 if less, returns 0 if they are the same, returns greater than 0 if it is larger
+	 */
+	public int compareTo(Object newContact) {
+		return 0;
+	
 	}
 }

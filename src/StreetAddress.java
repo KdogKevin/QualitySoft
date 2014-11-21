@@ -53,6 +53,7 @@ public class StreetAddress {
 
 	}
 
+
 	/**
 	 * returns a formatted string object of the StreetAddress
 	 */

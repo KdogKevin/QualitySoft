@@ -26,6 +26,20 @@ public class Name {
 	public void setLastName(String newLastName) {
 		// only used if wants to change later
 	}
+	/**
+	 * This method returns the last name of the name
+	 */
+	public String getLastName(){
+		
+		return lastName;
+	}
+	/**
+	 * This method returns the first name of the name
+	 */
+	public String getFirstName(){
+			
+			return firstName;
+		}
 
 	/**
 	 * returns a formatted a name Object
