@@ -18,6 +18,7 @@ public class Contact implements Comparable
 		System.out.println("setEmail called");
 
 	}
+	
 
 	/**
 	 * Set the phone to the user input phone

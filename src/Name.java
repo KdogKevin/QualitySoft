@@ -33,6 +33,7 @@ public class Name {
 		
 		return lastName;
 	}
+	
 	/**
 	 * This method returns the first name of the name
 	 */

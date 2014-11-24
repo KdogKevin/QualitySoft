@@ -21,7 +21,7 @@ public class ContactList {
 	}
 
 	/**
-	 * Prompts user to enter contact info and then stores the new contact into a
+	 * Prompts user to enter specific contact info and then stores the new contact into a
 	 * free position in the ContactList
 	 * 
 	 */
@@ -35,7 +35,7 @@ public class ContactList {
 		// String lastname= scan.next();
 
 		Name contactName;
-		contactName = new Name("", "");// firstName , lastName in para
+		contactName = new Name("", "");
 		x.setName(contactName);
 
 		x.setEmail("");

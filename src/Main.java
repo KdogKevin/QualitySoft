@@ -14,7 +14,7 @@ public class Main {
 		 */
 		String menuChoice;
 		Scanner scan = new Scanner(System.in);
-		do
+/*		do
 
 		{
 
@@ -50,7 +50,20 @@ public class Main {
 
 			}
 
-		} while (!menuChoice.equalsIgnoreCase("q"));
+		} while (!menuChoice.equalsIgnoreCase("q")); 
+		*/
+	}
+	/**
+	 * This method loads a contact list that was saved on the disk
+	 */
+	public static void load(){
+		
+	}
+	/**
+	 * This method saves the contact list to be used at a later time
+	 */
+	public static void save(){
+		
 	}
 
 }
