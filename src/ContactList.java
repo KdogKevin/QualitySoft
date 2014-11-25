@@ -71,7 +71,7 @@ public class ContactList {
 	/*
 	 * Arrays.sort();
 	 */
-		System.out.println("In method getListByLastNameAlpha");
+		System.out.println("In method sort");
 
 	}
 

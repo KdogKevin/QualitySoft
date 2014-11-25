@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.io.OutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.io.Serializable;
 public class Main {
 
 	public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class Main {
 		 */
 		String menuChoice;
 		Scanner scan = new Scanner(System.in);
-/*		do
+/*	do
 
 		{
 
@@ -31,27 +32,26 @@ public class Main {
 			System.out.print("-----> ");
 			menuChoice = scan.next();
 
-			// this is just a test
-			if (menuChoice.equals("1")) {
+			if (menuChoice.equals("1")) { */
 
 				allContacts.createContact();
-			} else if (menuChoice.equals("2")) {
+		//	} else if (menuChoice.equals("2")) {
 				allContacts.sort();
 				
 
-			} else if (menuChoice.equals("3")) {
+		//	} else if (menuChoice.equals("3")) {
 
 				allContacts.getContactByLastName("");
-			} else if (menuChoice.equals("4")) {
+		//	} else if (menuChoice.equals("4")) {
 				allContacts.getContactByEmail("");
 
-			} else if (menuChoice.equals("5")) {
+		//	} else if (menuChoice.equals("5")) {
 				allContacts.getContactByZip("");
 
-			}
+		/*	}
 
-		} while (!menuChoice.equalsIgnoreCase("q")); 
-		*/
+		} while (!menuChoice.equalsIgnoreCase("q")); */
+
 	}
 	/**
 	 * This method loads a contact list that was saved on the disk
@@ -67,4 +67,20 @@ public class Main {
 	}
 
 }
+/*
+In Constuctor ContactList
+In method createContact
+first and last name assigned in constructor
+setName called
+setEmail called
+setPhone called
+In streetAddress constructor
+setAddress called
+setNote called
+In method createContact
+In method sort
+In method getContactByLastName
+In method getContactByEmail
+In method getContactByZip
+ */
 
