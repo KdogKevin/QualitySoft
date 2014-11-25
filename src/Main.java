@@ -7,6 +7,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		/* Call method to create contact list */
+		load();
+		
 		ContactList allContacts;
 		allContacts = new ContactList();
 
@@ -52,22 +54,25 @@ public class Main {
 
 		} while (!menuChoice.equalsIgnoreCase("q")); */
 
+				save();
+
 	}
 	/**
-	 * This method loads a contact list that was saved on the disk
+	 * This method reads a contactList that was saved on the disk
 	 */
 	public static void load(){
-		
+		System.out.println("Load called");
 	}
 	/**
-	 * This method saves the contact list to be used at a later time
+	 * This method writes the contactList to be used at a later time
 	 */
 	public static void save(){
-		
+		System.out.println("Save called");
 	}
 
 }
 /*
+Load called
 In Constuctor ContactList
 In method createContact
 first and last name assigned in constructor
@@ -82,5 +87,6 @@ In method sort
 In method getContactByLastName
 In method getContactByEmail
 In method getContactByZip
+Save called
  */
 
