@@ -79,9 +79,7 @@ public class ContactList {
 	 * Returns the Contact list in string format
 	 */
 	public String ToString() {
-		/*
-		 * Returns in string format the values of the contactList array
-		 */
+
 		System.out.println("In method toString");
 		return "";
 	}
@@ -91,11 +89,7 @@ public class ContactList {
 	 * contact list, then returns the contact with the input last name
 	 */
 	public Contact getContactByLastName(String parLastName) {
-		/*
-		 * Use the parameter passed to compare it to last names in the contact
-		 * list to check and see if it matches any names in the contactList
-		 * array. If it does, retrieve the information.
-		 */
+
 		System.out.println("In method getContactByLastName");
 		Contact m = new Contact();
 		return m;
@@ -106,11 +100,7 @@ public class ContactList {
 	 * list, then returns the contact with the input email
 	 */
 	public Contact getContactByEmail(String parEmail) {
-		/*
-		 * Use the parameter passed to compare it to email in the contact list
-		 * to check and see if it matches any emails in the contactList array.
-		 * If it does, retrieve the information.
-		 */
+
 		System.out.println("In method getContactByEmail");
 		Contact m = new Contact();
 		return m;
@@ -121,11 +111,6 @@ public class ContactList {
 	 * contact list, then returns the contact with the input zip code
 	 */
 	public Contact getContactByZip(String parZip) {
-		/*
-		 * Use the parameter passed to compare it to Zip in the contact list to
-		 * check and see if it matches any Zip in the contactList array. If it
-		 * does, retrieve the information.
-		 */
 		System.out.println("In method getContactByZip");
 		Contact m = new Contact();
 		return m;
