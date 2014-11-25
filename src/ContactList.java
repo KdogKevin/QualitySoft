@@ -9,13 +9,15 @@ public class ContactList {
 	private int FINAL_LIST_SIZE = 10;
 	private Scanner scan = new Scanner(System.in);
 	private Contact[] allContacts;
-
+	private static int counter=0;
+	
 	/**
 	 * Constructor for ContactList where we will create the contactList array
 	 * that stores contact objects
 	 */
 	public ContactList() {
 
+		allContacts= new Contact[FINAL_LIST_SIZE];
 		System.out.println("In Constuctor ContactList");
 	}
 
@@ -25,40 +27,57 @@ public class ContactList {
 	 * 
 	 */
 	public void createContact() {
+		
+		
 		System.out.println("In method createContact");
-
 		Contact x = new Contact();
-
-		// System.out.println("what is your first name?");
-		// String firstnName =scan.next();
-		// String lastname= scan.next();
+		System.out.println("what is the first name?");
+		String firstName =scan.nextLine();
+;
+		System.out.println("what is the last name?");
+		
+		String lastName= scan.nextLine();
 
 		Name contactName;
-		contactName = new Name("", "");
+		contactName = new Name(firstName, lastName);
+		
 		x.setName(contactName);
 
-		x.setEmail("");
-		x.setPhone("");
+		
+		System.out.println("What is the email");
+		x.setEmail(scan.nextLine());
+		System.out.println("what is the phone number");
+		x.setPhone(scan.nextLine());
 
 		StreetAddress xStreetAddress;
 		xStreetAddress = new StreetAddress();
-		// String house =scan.next();
-		// String city= scan.next();
-		// String state =scan.next();
-		// String zip= scan.next();
-		// String country= scan.next();
-		xStreetAddress.setHouse("");
-		xStreetAddress.setCity("");
-		xStreetAddress.setState("");
-		xStreetAddress.setZip("");
-		xStreetAddress.setCountry("");
+		System.out.println("what is the House number");
+		String house =scan.nextLine();
+		System.out.println("what is the city ");
+		String city= scan.nextLine();
+		System.out.println("what is the state");
+		String state =scan.nextLine();
+		System.out.println("what is the zip");
+		String zip= scan.nextLine();
+		System.out.println("what is the country");
+		String country= scan.nextLine();
+		xStreetAddress.setHouse(house);
+		xStreetAddress.setCity(city);
+		xStreetAddress.setState(state);
+		xStreetAddress.setZip(zip);
+		xStreetAddress.setCountry(country);
 		x.setAddress(xStreetAddress);
+		System.out.println(xStreetAddress);
+		System.out.println("Do you want to enter a Note for the contact (Y/N)");
+		String setNote=scan.next();
+		if (setNote.equalsIgnoreCase("y")){
+			System.out.println("please enter in the note.");
+			x.setNote(scan.next());
+		}
 
-		x.setNote("");
-
+		allContacts[counter]=x;
+		counter++;
 		System.out.println("In method createContact");
-
-		// assign x into free position in array
 
 	}
 
@@ -77,10 +96,17 @@ public class ContactList {
 	/**
 	 * Returns the Contact list in string format
 	 */
-	public String ToString() {
+	public String toString() {
 
 		System.out.println("In method toString");
-		return "";
+		String contactListString = "";
+		
+		for (int i = 1; i <= counter; i++) {
+			
+			contactListString += "\n"+i +")"+ allContacts[i-1];
+			
+		}
+		return contactListString;
 	}
 
 	/**

@@ -13,7 +13,7 @@ public class StreetAddress {
 	 * constructs a street address object
 	 */
 	StreetAddress() {
-		System.out.println("In streetAddress constructor");
+		//System.out.println("In streetAddress constructor");
 
 		// assign users input to datamembers
 	}
@@ -22,6 +22,7 @@ public class StreetAddress {
 	 * Sets the house data member to the parameter newHouse
 	 */
 	public void setHouse(String newHouse) {
+		house=newHouse;
 
 	}
 	
@@ -30,6 +31,7 @@ public class StreetAddress {
 	 * Sets the city data member to the parameter newCity
 	 */
 	public void setCity(String newCity) {
+		city=newCity;
 
 	}
 
@@ -37,6 +39,7 @@ public class StreetAddress {
 	 * Sets the state data member to the parameter newState
 	 */
 	public void setState(String newState) {
+		state=newState;
 
 	}
 
@@ -44,6 +47,7 @@ public class StreetAddress {
 	 * Sets the zip data member to the parameter newZip
 	 */
 	public void setZip(String newZip) {
+		zip=newZip;
 
 	}
 
@@ -51,7 +55,7 @@ public class StreetAddress {
 	 * Sets the country data member to the parameter newCountry
 	 */
 	public void setCountry(String newCountry) {
-
+		country=newCountry;
 	}
 
 
@@ -59,7 +63,7 @@ public class StreetAddress {
 	 * returns a formatted string object of the StreetAddress
 	 */
 	public String toString() {
-		return "";
+		return house + "\n" + city + ", " + state + " " + zip + "\n" + country;
 	}
 	/* Include methods to set all of the variables for all of the address */
 

@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		/* Call method to create contact list */
-		load();
+		//load();
 		
 		ContactList allContacts;
 		allContacts = new ContactList();
@@ -17,6 +17,26 @@ public class Main {
 		 */
 		String menuChoice;
 		Scanner scan = new Scanner(System.in);
+		
+		
+		allContacts.createContact();
+		System.out.println(allContacts);
+		allContacts.createContact();
+		System.out.println(allContacts);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 /*	do
 
 		{
@@ -36,25 +56,25 @@ public class Main {
 
 			if (menuChoice.equals("1")) { */
 
-				allContacts.createContact();
+				//allContacts.createContact();
 		//	} else if (menuChoice.equals("2")) {
-				allContacts.sort();
+				//allContacts.sort();
 				
 
 		//	} else if (menuChoice.equals("3")) {
 
-				allContacts.getContactByLastName("");
+				//allContacts.getContactByLastName("");
 		//	} else if (menuChoice.equals("4")) {
-				allContacts.getContactByEmail("");
+				//allContacts.getContactByEmail("");
 
 		//	} else if (menuChoice.equals("5")) {
-				allContacts.getContactByZip("");
+				//allContacts.getContactByZip("");
 
 		/*	}
 
 		} while (!menuChoice.equalsIgnoreCase("q")); */
 
-				save();
+				//save();
 
 	}
 	/**

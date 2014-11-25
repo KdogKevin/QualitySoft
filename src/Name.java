@@ -11,6 +11,9 @@ public class Name {
 	 */
 	Name(String newFirstName, String newLastName) {
 		System.out.println("first and last name assigned in constructor");
+		firstName=newFirstName;
+
+		lastName=newLastName;
 	}
 
 	/**
@@ -46,6 +49,6 @@ public class Name {
 	 * returns a formatted a name Object
 	 */
 	public String toString() {
-		return "";
+		return lastName+ ", "+ firstName;
 	}
 }

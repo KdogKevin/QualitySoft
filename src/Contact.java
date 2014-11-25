@@ -15,8 +15,8 @@ public class Contact implements Comparable
 	 */
 	public void setEmail(String newEmail) {
 
-		System.out.println("setEmail called");
-
+		emailAddress=newEmail;
+		//System.out.println("setEmail called");
 	}
 	
 
@@ -24,15 +24,16 @@ public class Contact implements Comparable
 	 * Set the phone to the user input phone
 	 */
 	public void setPhone(String newPhone) {
-		System.out.println("setPhone called");
-
+		phoneNumber=newPhone;
+		//System.out.println("setPhone called");
 	}
 
 	/**
 	 * Set the note to the user input newNote
 	 */
 	public void setNote(String newNote) {
-		System.out.println("setNote called");
+		note=newNote;
+		//System.out.println("setNote called");
 
 	}
 
@@ -40,8 +41,9 @@ public class Contact implements Comparable
 	 * Set the name to a newName object
 	 */
 	public void setName(Name newName) {
-		// par gets new Name()
-		System.out.println("setName called");
+		
+		name=newName;
+		//System.out.println("setName called");
 
 	}
 
@@ -49,8 +51,9 @@ public class Contact implements Comparable
 	 * Set the address to a new address object
 	 */
 	public void setAddress(StreetAddress newStreetAddress) {
-		// par gets new StreetAddress()
-		System.out.println("setAddress called");
+		
+		streetAddress=newStreetAddress;
+		//System.out.println("setAddress called");
 
 	}
 
@@ -60,7 +63,7 @@ public class Contact implements Comparable
 	 * returns a contact object in a formatted String
 	 */
 	public String toString() {
-		return "";
+		return name+"\n"+ streetAddress+"\n"+ emailAddress +"\n"+ phoneNumber;
 	}
 
 	/**
