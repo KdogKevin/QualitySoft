@@ -15,14 +15,13 @@ public class ContactList {
 	 * that stores contact objects
 	 */
 	public ContactList() {
-		
-		
+
 		System.out.println("In Constuctor ContactList");
 	}
 
 	/**
-	 * Prompts user to enter specific contact info and then stores the new contact into a
-	 * free position in the ContactList
+	 * Prompts user to enter specific contact info and then stores the new
+	 * contact into a free position in the ContactList
 	 * 
 	 */
 	public void createContact() {
@@ -68,9 +67,9 @@ public class ContactList {
 	 */
 	public void sort() {
 		/* Will sort the contact list to be alphabetical order by last name. */
-	/*
-	 * Arrays.sort();
-	 */
+		/*
+		 * Arrays.sort();
+		 */
 		System.out.println("In method sort");
 
 	}
@@ -86,7 +85,8 @@ public class ContactList {
 
 	/**
 	 * Compares the last Name that was input to the last names in the current
-	 * contact list, then returns the contact with the input last name
+	 * contact list, then returns the contact in String format with the input
+	 * last name
 	 */
 	public String getContactByLastName(String parLastName) {
 
@@ -97,7 +97,7 @@ public class ContactList {
 
 	/**
 	 * Compares the email that was input to the email in the current contact
-	 * list, then returns the contact with the input email
+	 * list, then returns the contact in String format with the input email
 	 */
 	public String getContactByEmail(String parEmail) {
 
@@ -107,7 +107,8 @@ public class ContactList {
 
 	/**
 	 * Compares the zip code that was input to the zip code in the current
-	 * contact list, then returns the contact with the input zip code
+	 * contact list, then returns the contact in String format with the input
+	 * zip code
 	 */
 	public String getContactByZip(String parZip) {
 		System.out.println("In method getContactByZip");
