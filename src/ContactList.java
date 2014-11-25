@@ -108,7 +108,7 @@ public class ContactList {
 	/**
 	 * Compares the zip code that was input to the zip code in the current
 	 * contact list, then returns the contact in String format with the input
-	 * zip code
+	 * zip code 
 	 */
 	public String getContactByZip(String parZip) {
 		System.out.println("In method getContactByZip");
