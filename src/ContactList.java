@@ -88,31 +88,30 @@ public class ContactList {
 	 * Compares the last Name that was input to the last names in the current
 	 * contact list, then returns the contact with the input last name
 	 */
-	public Contact getContactByLastName(String parLastName) {
+	public String getContactByLastName(String parLastName) {
 
 		System.out.println("In method getContactByLastName");
-		Contact m = new Contact();
-		return m;
+
+		return "";
 	}
 
 	/**
 	 * Compares the email that was input to the email in the current contact
 	 * list, then returns the contact with the input email
 	 */
-	public Contact getContactByEmail(String parEmail) {
+	public String getContactByEmail(String parEmail) {
 
 		System.out.println("In method getContactByEmail");
-		Contact m = new Contact();
-		return m;
+		return "";
 	}
 
 	/**
 	 * Compares the zip code that was input to the zip code in the current
 	 * contact list, then returns the contact with the input zip code
 	 */
-	public Contact getContactByZip(String parZip) {
+	public String getContactByZip(String parZip) {
 		System.out.println("In method getContactByZip");
-		Contact m = new Contact();
-		return m;
+
+		return "";
 	}
 }
