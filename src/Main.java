@@ -1,5 +1,7 @@
 import java.util.Scanner;
-
+import java.io.OutputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
@@ -12,7 +14,7 @@ public class Main {
 		 */
 		String menuChoice;
 		Scanner scan = new Scanner(System.in);
-		do
+/*		do
 
 		{
 
@@ -21,7 +23,7 @@ public class Main {
 			System.out.println("What would you like to do?");
 			System.out.println("1) Create a new contact ");
 			System.out
-					.println("2) Get the list by last name in alphabetical order");
+					.println("2) print sorted list of contacts");
 			System.out.println("3) Search for a contact by using a last name");
 			System.out.println("4) Search for a contact by using an email");
 			System.out.println("5) Search for a contact by using a zip code");
@@ -34,7 +36,8 @@ public class Main {
 
 				allContacts.createContact();
 			} else if (menuChoice.equals("2")) {
-				allContacts.getListByLastNameAlpha();
+				allContacts.sort();
+				
 
 			} else if (menuChoice.equals("3")) {
 
@@ -47,7 +50,20 @@ public class Main {
 
 			}
 
-		} while (!menuChoice.equalsIgnoreCase("q"));
+		} while (!menuChoice.equalsIgnoreCase("q")); 
+		*/
+	}
+	/**
+	 * This method loads a contact list that was saved on the disk
+	 */
+	public static void load(){
+		
+	}
+	/**
+	 * This method saves the contact list to be used at a later time
+	 */
+	public static void save(){
+		
 	}
 
 }
