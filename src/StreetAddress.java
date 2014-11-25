@@ -24,6 +24,7 @@ public class StreetAddress {
 	public void setHouse(String newHouse) {
 
 	}
+	
 
 	/**
 	 * Sets the city data member to the parameter newCity
@@ -52,6 +53,7 @@ public class StreetAddress {
 	public void setCountry(String newCountry) {
 
 	}
+
 
 	/**
 	 * returns a formatted string object of the StreetAddress
