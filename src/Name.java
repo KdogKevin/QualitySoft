@@ -10,10 +10,10 @@ public class Name {
 	 * parameters
 	 */
 	Name(String newFirstName, String newLastName) {
-		System.out.println("first and last name assigned in constructor");
-		firstName=newFirstName;
+		// System.out.println("first and last name assigned in constructor");
+		firstName = newFirstName;
 
-		lastName=newLastName;
+		lastName = newLastName;
 	}
 
 	/**
@@ -29,26 +29,27 @@ public class Name {
 	public void setLastName(String newLastName) {
 		// only used if wants to change later
 	}
+
 	/**
 	 * This method returns the last name of the name
 	 */
-	public String getLastName(){
-		
+	public String getLastName() {
+
 		return lastName;
 	}
-	
+
 	/**
 	 * This method returns the first name of the name
 	 */
-	public String getFirstName(){
-			
-			return firstName;
-		}
+	public String getFirstName() {
+
+		return firstName;
+	}
 
 	/**
 	 * returns a formatted a name Object
 	 */
 	public String toString() {
-		return lastName+ ", "+ firstName;
+		return lastName + ", " + firstName;
 	}
 }

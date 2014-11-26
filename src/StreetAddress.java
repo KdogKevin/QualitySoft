@@ -13,7 +13,7 @@ public class StreetAddress {
 	 * constructs a street address object
 	 */
 	StreetAddress() {
-		//System.out.println("In streetAddress constructor");
+		// System.out.println("In streetAddress constructor");
 
 		// assign users input to datamembers
 	}
@@ -22,16 +22,15 @@ public class StreetAddress {
 	 * Sets the house data member to the parameter newHouse
 	 */
 	public void setHouse(String newHouse) {
-		house=newHouse;
+		house = newHouse;
 
 	}
-	
 
 	/**
 	 * Sets the city data member to the parameter newCity
 	 */
 	public void setCity(String newCity) {
-		city=newCity;
+		city = newCity;
 
 	}
 
@@ -39,7 +38,7 @@ public class StreetAddress {
 	 * Sets the state data member to the parameter newState
 	 */
 	public void setState(String newState) {
-		state=newState;
+		state = newState;
 
 	}
 
@@ -47,7 +46,7 @@ public class StreetAddress {
 	 * Sets the zip data member to the parameter newZip
 	 */
 	public void setZip(String newZip) {
-		zip=newZip;
+		zip = newZip;
 
 	}
 
@@ -55,15 +54,34 @@ public class StreetAddress {
 	 * Sets the country data member to the parameter newCountry
 	 */
 	public void setCountry(String newCountry) {
-		country=newCountry;
+		country = newCountry;
 	}
-
 
 	/**
 	 * returns a formatted string object of the StreetAddress
 	 */
 	public String toString() {
-		return house + "\n" + city + ", " + state + " " + zip + "\n" + country;
+		String tempString = "";
+		// return house + "\n" + city + ", " + state + " " + zip + "\n" +
+		// country;
+		if (!(house.equals(""))) {
+			tempString = tempString + house + "\n";
+		}
+		if (!(city.equals(""))) {
+			if (!(state.equals(""))) {
+				tempString = tempString + city + ", " + state + " ";
+			}
+			else {
+				tempString = tempString + city + " ";
+			}
+		}
+		if (!(zip.equals(""))) {
+			tempString = tempString + zip + " ";
+		}
+		if (!(country.equals(""))) {
+			tempString = tempString + country + " ";
+		}
+		return tempString;
 	}
 	/* Include methods to set all of the variables for all of the address */
 
