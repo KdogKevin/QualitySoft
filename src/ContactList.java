@@ -18,7 +18,7 @@ public class ContactList {
 	public ContactList() {
 
 		allContacts = new Contact[FINAL_LIST_SIZE];
-		// System.out.println("In Constuctor ContactList");
+		// System.out.println("In Constructor ContactList");
 	}
 
 	/**
@@ -30,11 +30,10 @@ public class ContactList {
 
 		// System.out.println("In method createContact");
 		Contact x = new Contact();
-
+		if (!(counter >= FINAL_LIST_SIZE)) {
 		System.out.println("What is the last name?");
 		String lastName = scan.nextLine();
-
-		if (!(lastName.equals(""))) {
+			if (!(lastName.equals(""))) {
 			System.out.println("What is the first name?");
 			String firstName = scan.nextLine();
 			Name contactName;
@@ -82,6 +81,10 @@ public class ContactList {
 		} else {
 			System.out
 					.println("You must enter a contact’s last name in order for a contact to be entered.");
+		}
+		}
+		else {
+			System.out.println("Contact can't be added.  Contact list is full.");
 		}
 		//System.out.println("exiting the ContactList method");
 	}

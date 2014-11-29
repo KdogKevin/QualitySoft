@@ -69,11 +69,17 @@ public class StreetAddress {
 		}
 		if (!(city.equals(""))) {
 			if (!(state.equals(""))) {
+				//System.out.println("State is " + state);
 				tempString = tempString + city + ", " + state + " ";
 			}
 			else {
+				//System.out.println("State is " + state);
 				tempString = tempString + city + " ";
 			}
+		}
+		else {
+			
+			tempString = tempString + state + " ";
 		}
 		if (!(zip.equals(""))) {
 			tempString = tempString + zip + " ";
