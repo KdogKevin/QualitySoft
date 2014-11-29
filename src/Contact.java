@@ -31,7 +31,7 @@ public class Contact implements Comparable {
 	 */
 	public void setNote(String newNote) {
 		note = newNote;
-		//System.out.println("setNote called");
+		// System.out.println("setNote called");
 
 	}
 

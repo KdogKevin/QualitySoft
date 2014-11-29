@@ -89,4 +89,71 @@ public class Main {
  * createContact In method sort In method getContactByLastName In method
  * getContactByEmail In method getContactByZip Save called
  */
+/*
+What is the last name?
+Jones
+What is the first name?
+Mary
+What is the email
+Maryjones@gmail.com
+what is the phone number
+650-955-5040
+What is the House number
+2222 Elm Street
+What is the city 
+Los Altos
+What is the state
+CA
+What is the zip
+94022
+What is the country
+USA
+Do you want to enter a Note for the contact (Y/N)
+Y
+Please enter in the note.
+Mary loves computer programming.
 
+1)
+Jones, Mary
+2222 Elm Street
+Los Altos, CA 94022 USA 
+Maryjones@gmail.com
+650-955-5040
+Note: Mary loves computer programming.
+
+
+What is the last name?
+Smith
+What is the first name?
+
+What is the email
+JohnSmith@apple.com
+what is the phone number
+555-555-5555
+What is the House number
+1309 Oak Street
+What is the city 
+
+What is the state
+CA
+What is the zip
+94040
+What is the country
+USA
+Do you want to enter a Note for the contact (Y/N)
+n
+
+1)
+Jones, Mary
+2222 Elm Street
+Los Altos, CA 94022 USA 
+Maryjones@gmail.com
+650-955-5040
+Note: Mary loves computer programming.
+2)
+Smith
+1309 Oak Street
+CA 94040 USA 
+JohnSmith@apple.com
+555-555-5555 
+*/

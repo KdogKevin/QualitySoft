@@ -31,62 +31,62 @@ public class ContactList {
 		// System.out.println("In method createContact");
 		Contact x = new Contact();
 		if (!(counter >= FINAL_LIST_SIZE)) {
-		System.out.println("What is the last name?");
-		String lastName = scan.nextLine();
+			System.out.println("What is the last name?");
+			String lastName = scan.nextLine();
 			if (!(lastName.equals(""))) {
-			System.out.println("What is the first name?");
-			String firstName = scan.nextLine();
-			Name contactName;
-			contactName = new Name(firstName, lastName);
+				System.out.println("What is the first name?");
+				String firstName = scan.nextLine();
+				Name contactName;
+				contactName = new Name(firstName, lastName);
 
-			x.setName(contactName);
+				x.setName(contactName);
 
-			System.out.println("What is the email");
-			x.setEmail(scan.nextLine());
-			System.out.println("what is the phone number");
-			x.setPhone(scan.nextLine());
+				System.out.println("What is the email");
+				x.setEmail(scan.nextLine());
+				System.out.println("what is the phone number");
+				x.setPhone(scan.nextLine());
 
-			StreetAddress xStreetAddress;
-			xStreetAddress = new StreetAddress();
-			System.out.println("What is the House number");
-			String house = scan.nextLine();
-			System.out.println("What is the city ");
-			String city = scan.nextLine();
-			System.out.println("What is the state");
-			String state = scan.nextLine();
-			System.out.println("What is the zip");
-			String zip = scan.nextLine();
-			System.out.println("" + "What is the country");
-			String country = scan.nextLine();
-			xStreetAddress.setHouse(house);
-			xStreetAddress.setCity(city);
-			xStreetAddress.setState(state);
-			xStreetAddress.setZip(zip);
-			xStreetAddress.setCountry(country);
-			x.setAddress(xStreetAddress);
-			// System.out.println(xStreetAddress);
-			System.out
-					.println("Do you want to enter a Note for the contact (Y/N)");
-			String setNote = scan.nextLine();
-			if (setNote.equalsIgnoreCase("y")) {
-				System.out.println("Please enter in the note.");
-				x.setNote(scan.nextLine());
+				StreetAddress xStreetAddress;
+				xStreetAddress = new StreetAddress();
+				System.out.println("What is the House number");
+				String house = scan.nextLine();
+				System.out.println("What is the city ");
+				String city = scan.nextLine();
+				System.out.println("What is the state");
+				String state = scan.nextLine();
+				System.out.println("What is the zip");
+				String zip = scan.nextLine();
+				System.out.println("" + "What is the country");
+				String country = scan.nextLine();
+				xStreetAddress.setHouse(house);
+				xStreetAddress.setCity(city);
+				xStreetAddress.setState(state);
+				xStreetAddress.setZip(zip);
+				xStreetAddress.setCountry(country);
+				x.setAddress(xStreetAddress);
+				// System.out.println(xStreetAddress);
+				System.out
+						.println("Do you want to enter a Note for the contact (Y/N)");
+				String setNote = scan.nextLine();
+				if (setNote.equalsIgnoreCase("y")) {
+					System.out.println("Please enter in the note.");
+					x.setNote(scan.nextLine());
+				} else {
+					x.setNote("");
+				}
+				;
+				allContacts[counter] = x;
+				counter++;
+				// System.out.println("In method createContact");
+			} else {
+				System.out
+						.println("You must enter a contact’s last name in order for a contact to be entered.");
 			}
-			else{
-				x.setNote("");
-			}
-;			allContacts[counter] = x;
-			counter++;
-			//System.out.println("In method createContact");
 		} else {
 			System.out
-					.println("You must enter a contact’s last name in order for a contact to be entered.");
+					.println("Contact can't be added.  Contact list is full.");
 		}
-		}
-		else {
-			System.out.println("Contact can't be added.  Contact list is full.");
-		}
-		//System.out.println("exiting the ContactList method");
+		// System.out.println("exiting the ContactList method");
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class ContactList {
 	 */
 	public String toString() {
 
-		//System.out.println("In method toString");
+		// System.out.println("In method toString");
 		String contactListString = "";
 
 		for (int i = 1; i <= counter; i++) {
