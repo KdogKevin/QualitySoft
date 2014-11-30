@@ -92,7 +92,16 @@ public class Contact implements Comparable {
 	 * larger
 	 */
 	public int compareTo(Object newContact) {
-		return 0;
-
+		
+		int	lastNameCompare= name.getLastName().compareToIgnoreCase(((Name) newContact).getLastName());
+		if (0!=lastNameCompare){
+			return lastNameCompare;
+		}
+		else {
+		return	name.getFirstName().compareToIgnoreCase(((Name)newContact).getFirstName());
+			
+			
+			
+		}
 	}
 }
