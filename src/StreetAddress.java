@@ -12,7 +12,7 @@ public class StreetAddress {
 	/**
 	 * constructs a street address object
 	 */
-	StreetAddress() {
+	public StreetAddress() {
 		// System.out.println("In streetAddress constructor");
 
 		// assign users input to datamembers

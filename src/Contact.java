@@ -54,6 +54,14 @@ public class Contact implements Comparable {
 		// System.out.println("setAddress called");
 
 	}
+	
+	/**
+	 * This method returns the email of the Contact
+	 */
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+	
 
 	/**
 	 * returns a contact object in a formatted String

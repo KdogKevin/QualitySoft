@@ -6,10 +6,11 @@ import java.util.Scanner;
  */
 
 public class ContactList {
-	private int FINAL_LIST_SIZE = 10;
+	private final int FINAL_LIST_SIZE = 10;
 	private Scanner scan = new Scanner(System.in);
 	private Contact[] allContacts;
 	private static int counter = 0;
+	private int currentListSize = 0;
 
 	/**
 	 * Constructor for ContactList where we will create the contactList array
@@ -29,7 +30,7 @@ public class ContactList {
 	public void createContact() {
 
 		// System.out.println("In method createContact");
-		Contact x = new Contact();
+		Contact tempContact = new Contact();
 		if (!(counter >= FINAL_LIST_SIZE)) {
 			System.out.println("What is the last name?");
 			String lastName = scan.nextLine();
@@ -39,12 +40,12 @@ public class ContactList {
 				Name contactName;
 				contactName = new Name(firstName, lastName);
 
-				x.setName(contactName);
+				tempContact.setName(contactName);
 
 				System.out.println("What is the email");
-				x.setEmail(scan.nextLine());
+				tempContact.setEmail(scan.nextLine());
 				System.out.println("what is the phone number");
-				x.setPhone(scan.nextLine());
+				tempContact.setPhone(scan.nextLine());
 
 				StreetAddress xStreetAddress;
 				xStreetAddress = new StreetAddress();
@@ -63,20 +64,21 @@ public class ContactList {
 				xStreetAddress.setState(state);
 				xStreetAddress.setZip(zip);
 				xStreetAddress.setCountry(country);
-				x.setAddress(xStreetAddress);
+				tempContact.setAddress(xStreetAddress);
 				// System.out.println(xStreetAddress);
 				System.out
 						.println("Do you want to enter a Note for the contact (Y/N)");
 				String setNote = scan.nextLine();
 				if (setNote.equalsIgnoreCase("y")) {
 					System.out.println("Please enter in the note.");
-					x.setNote(scan.nextLine());
+					tempContact.setNote(scan.nextLine());
 				} else {
-					x.setNote("");
+					tempContact.setNote("");
 				}
 				;
-				allContacts[counter] = x;
+				allContacts[counter] = tempContact;
 				counter++;
+				currentListSize++;
 				// System.out.println("In method createContact");
 			} else {
 				System.out
