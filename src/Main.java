@@ -2,10 +2,13 @@ import java.util.Scanner;
 import java.io.OutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.io.Serializable;
 public class Main {
 
 	public static void main(String[] args) {
 		/* Call method to create contact list */
+		load();
+		
 		ContactList allContacts;
 		allContacts = new ContactList();
 
@@ -14,7 +17,7 @@ public class Main {
 		 */
 		String menuChoice;
 		Scanner scan = new Scanner(System.in);
-/*		do
+/*	do
 
 		{
 
@@ -31,40 +34,59 @@ public class Main {
 			System.out.print("-----> ");
 			menuChoice = scan.next();
 
-			// this is just a test
-			if (menuChoice.equals("1")) {
+			if (menuChoice.equals("1")) { */
 
 				allContacts.createContact();
-			} else if (menuChoice.equals("2")) {
+		//	} else if (menuChoice.equals("2")) {
 				allContacts.sort();
 				
 
-			} else if (menuChoice.equals("3")) {
+		//	} else if (menuChoice.equals("3")) {
 
 				allContacts.getContactByLastName("");
-			} else if (menuChoice.equals("4")) {
+		//	} else if (menuChoice.equals("4")) {
 				allContacts.getContactByEmail("");
 
-			} else if (menuChoice.equals("5")) {
+		//	} else if (menuChoice.equals("5")) {
 				allContacts.getContactByZip("");
 
-			}
+		/*	}
 
-		} while (!menuChoice.equalsIgnoreCase("q")); 
-		*/
+		} while (!menuChoice.equalsIgnoreCase("q")); */
+
+				save();
+
 	}
 	/**
-	 * This method loads a contact list that was saved on the disk
+	 * This method reads a contactList that was saved on the disk
 	 */
 	public static void load(){
-		
+		System.out.println("Load called");
 	}
 	/**
-	 * This method saves the contact list to be used at a later time
+	 * This method writes the contactList to be used at a later time
 	 */
 	public static void save(){
-		
+		System.out.println("Save called");
 	}
 
 }
+/*
+Load called
+In Constuctor ContactList
+In method createContact
+first and last name assigned in constructor
+setName called
+setEmail called
+setPhone called
+In streetAddress constructor
+setAddress called
+setNote called
+In method createContact
+In method sort
+In method getContactByLastName
+In method getContactByEmail
+In method getContactByZip
+Save called
+ */
 

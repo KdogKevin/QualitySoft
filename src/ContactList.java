@@ -15,14 +15,13 @@ public class ContactList {
 	 * that stores contact objects
 	 */
 	public ContactList() {
-		
-		
+
 		System.out.println("In Constuctor ContactList");
 	}
 
 	/**
-	 * Prompts user to enter specific contact info and then stores the new contact into a
-	 * free position in the ContactList
+	 * Prompts user to enter specific contact info and then stores the new
+	 * contact into a free position in the ContactList
 	 * 
 	 */
 	public void createContact() {
@@ -68,10 +67,10 @@ public class ContactList {
 	 */
 	public void sort() {
 		/* Will sort the contact list to be alphabetical order by last name. */
-	/*
-	 * Arrays.sort();
-	 */
-		System.out.println("In method getListByLastNameAlpha");
+		/*
+		 * Arrays.sort();
+		 */
+		System.out.println("In method sort");
 
 	}
 
@@ -79,55 +78,41 @@ public class ContactList {
 	 * Returns the Contact list in string format
 	 */
 	public String ToString() {
-		/*
-		 * Returns in string format the values of the contactList array
-		 */
+
 		System.out.println("In method toString");
 		return "";
 	}
 
 	/**
 	 * Compares the last Name that was input to the last names in the current
-	 * contact list, then returns the contact with the input last name
+	 * contact list, then returns the contact in String format with the input
+	 * last name
 	 */
-	public Contact getContactByLastName(String parLastName) {
-		/*
-		 * Use the parameter passed to compare it to last names in the contact
-		 * list to check and see if it matches any names in the contactList
-		 * array. If it does, retrieve the information.
-		 */
+	public String getContactByLastName(String parLastName) {
+
 		System.out.println("In method getContactByLastName");
-		Contact m = new Contact();
-		return m;
+
+		return "";
 	}
 
 	/**
 	 * Compares the email that was input to the email in the current contact
-	 * list, then returns the contact with the input email
+	 * list, then returns the contact in String format with the input email
 	 */
-	public Contact getContactByEmail(String parEmail) {
-		/*
-		 * Use the parameter passed to compare it to email in the contact list
-		 * to check and see if it matches any emails in the contactList array.
-		 * If it does, retrieve the information.
-		 */
+	public String getContactByEmail(String parEmail) {
+
 		System.out.println("In method getContactByEmail");
-		Contact m = new Contact();
-		return m;
+		return "";
 	}
 
 	/**
 	 * Compares the zip code that was input to the zip code in the current
-	 * contact list, then returns the contact with the input zip code
+	 * contact list, then returns the contact in String format with the input
+	 * zip code 
 	 */
-	public Contact getContactByZip(String parZip) {
-		/*
-		 * Use the parameter passed to compare it to Zip in the contact list to
-		 * check and see if it matches any Zip in the contactList array. If it
-		 * does, retrieve the information.
-		 */
+	public String getContactByZip(String parZip) {
 		System.out.println("In method getContactByZip");
-		Contact m = new Contact();
-		return m;
+
+		return "";
 	}
 }
