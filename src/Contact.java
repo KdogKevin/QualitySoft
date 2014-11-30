@@ -2,8 +2,7 @@
  * One Object of a Contact Stores the info for a single contact
  *
  */
-public class Contact implements Comparable
-{
+public class Contact implements Comparable {
 	private String emailAddress;
 	private String phoneNumber;
 	private String note;
@@ -15,24 +14,24 @@ public class Contact implements Comparable
 	 */
 	public void setEmail(String newEmail) {
 
-		System.out.println("setEmail called");
-
+		emailAddress = newEmail;
+		// System.out.println("setEmail called");
 	}
-	
 
 	/**
 	 * Set the phone to the user input phone
 	 */
 	public void setPhone(String newPhone) {
-		System.out.println("setPhone called");
-
+		phoneNumber = newPhone;
+		// System.out.println("setPhone called");
 	}
 
 	/**
 	 * Set the note to the user input newNote
 	 */
 	public void setNote(String newNote) {
-		System.out.println("setNote called");
+		note = newNote;
+		// System.out.println("setNote called");
 
 	}
 
@@ -40,8 +39,9 @@ public class Contact implements Comparable
 	 * Set the name to a newName object
 	 */
 	public void setName(Name newName) {
-		// par gets new Name()
-		System.out.println("setName called");
+
+		name = newName;
+		// System.out.println("setName called");
 
 	}
 
@@ -49,26 +49,59 @@ public class Contact implements Comparable
 	 * Set the address to a new address object
 	 */
 	public void setAddress(StreetAddress newStreetAddress) {
-		// par gets new StreetAddress()
-		System.out.println("setAddress called");
+
+		streetAddress = newStreetAddress;
+		// System.out.println("setAddress called");
 
 	}
-
-
 
 	/**
 	 * returns a contact object in a formatted String
 	 */
 	public String toString() {
-		return "";
+		String tempString = "";
+		// System.out.println("in method toString in Contact ");
+		if (name.getFirstName().equals("")) {
+			tempString = tempString + "\n" + name.getLastName();
+		} else {
+			tempString = tempString + "\n" + name;
+		}
+
+		if (!(streetAddress.equals(""))) {
+			tempString = tempString + "\n" + streetAddress;
+		}
+		if (!(emailAddress.equals(""))) {
+			tempString = tempString + "\n" + emailAddress;
+		}
+		if (!(phoneNumber.equals(""))) {
+			tempString = tempString + "\n" + phoneNumber;
+		}
+		if (!(note.equals(""))) {
+			tempString = tempString + "\n" + "Note: " + note;
+		}
+
+		return tempString;
+
+		// return name+"\n"+ streetAddress+"\n"+ emailAddress +"\n"+
+		// phoneNumber;
 	}
 
 	/**
-	 * compares newName to the lastName of the contact
-	 * returns less than 0 if less, returns 0 if they are the same, returns greater than 0 if it is larger
+	 * compares newName to the lastName of the contact returns less than 0 if
+	 * less, returns 0 if they are the same, returns greater than 0 if it is
+	 * larger
 	 */
 	public int compareTo(Object newContact) {
-		return 0;
-	
+		
+		int	lastNameCompare= name.getLastName().compareToIgnoreCase(((Name) newContact).getLastName());
+		if (0!=lastNameCompare){
+			return lastNameCompare;
+		}
+		else {
+		return	name.getFirstName().compareToIgnoreCase(((Name)newContact).getFirstName());
+			
+			
+			
+		}
 	}
 }
