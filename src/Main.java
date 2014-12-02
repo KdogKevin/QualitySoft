@@ -16,14 +16,49 @@ public class Main {
 		/*
 		 * Asks the user what action is needed to be done
 		 */
-		String menuChoice;
+		int menuChoice;
 		Scanner scan = new Scanner(System.in);
-
+/*
 		allContacts.createContact();
 		System.out.println(allContacts);
 		System.out.println("\n");
 		allContacts.createContact();
 		System.out.println(allContacts);
+	*/	
+		  Scanner kboard = new Scanner(System.in);
+		  do{
+		  System.out.println("---MENU---");
+		  System.out.println("What would you like to do?");
+		  System.out.println("1) Create a new contact "); System.out
+		  .println("2) print sorted list of contacts");
+		  System.out.println("3) Search for a contact by using a last name");
+		  System.out.println("4) Search for a contact by using an email");
+		  System.out.println("5) Search for a contact by using a zip code");
+		  System.out.println("0) Quit"); System.out.print("-----> ");
+		  menuChoice = scan.nextInt();
+		  
+		  switch(menuChoice){
+		  case 1: allContacts.createContact();
+		  System.out.println(allContacts);
+		  break;
+		  case 2: allContacts.sort();
+		  System.out.println(allContacts);
+		  break;
+		  case 3: System.out.println("Enter a contact last name");
+			  System.out.println(allContacts.getContactByLastName(scan.next()));
+			  break;
+		  case 4: System.out.println("Enter a contact email");
+		  System.out.println(allContacts.getContactByEmail(scan.next()));
+		  break;
+		  case 5: System.out.println("Enter a contact zip");
+		  System.out.println(allContacts.getContactByZip(scan.next()));
+		  break;
+		  case 0:// implement save method later
+			  break;
+		  }
+		  
+		  }while (menuChoice!=0);
+		
 
 		/*
 		 * do

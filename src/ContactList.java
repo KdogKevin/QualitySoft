@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -10,7 +11,6 @@ public class ContactList {
 	private Scanner scan = new Scanner(System.in);
 	private Contact[] allContacts;
 	private static int counter = 0;
-	private int currentListSize = 0;
 
 	/**
 	 * Constructor for ContactList where we will create the contactList array
@@ -78,7 +78,6 @@ public class ContactList {
 				;
 				allContacts[counter] = tempContact;
 				counter++;
-				currentListSize++;
 				// System.out.println("In method createContact");
 			} else {
 				System.out
@@ -95,10 +94,9 @@ public class ContactList {
 	 * Sorts the ContactList by last name
 	 */
 	public void sort() {
-		/* Will sort the contact list to be alphabetical order by last name. */
-		/*
-		 * Arrays.sort();
-		 */
+
+		Arrays.sort(allContacts);
+		
 		System.out.println("In method sort");
 
 	}
@@ -125,10 +123,16 @@ public class ContactList {
 	 * last name
 	 */
 	public String getContactByLastName(String parLastName) {
+		String tempString="";
+		for (int i =0; i<allContacts.length;i++){
+		System.out.println(allContacts[i].getName().getLastName().compareToIgnoreCase(parLastName));
+			if (allContacts[i].getName().getLastName().compareToIgnoreCase(parLastName)==0){
+				tempString+=allContacts[i]+"\n";
+			}
+		}
 
-		System.out.println("In method getContactByLastName");
 
-		return "";
+		return tempString;
 	}
 
 	/**

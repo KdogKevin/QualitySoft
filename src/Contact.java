@@ -61,6 +61,12 @@ public class Contact implements Comparable {
 	public String getEmailAddress() {
 		return emailAddress;
 	}
+	/**
+	 * This method returns the name of the Contact
+	 */
+	public Name getName(){
+		return name;
+	}
 	
 
 	/**
@@ -101,12 +107,12 @@ public class Contact implements Comparable {
 	 */
 	public int compareTo(Object newContact) {
 		
-		int	lastNameCompare= name.getLastName().compareToIgnoreCase(((Name) newContact).getLastName());
+		int	lastNameCompare= name.getLastName().compareToIgnoreCase( ((Contact) newContact).getName().getLastName());
 		if (0!=lastNameCompare){
 			return lastNameCompare;
 		}
 		else {
-		return	name.getFirstName().compareToIgnoreCase(((Name)newContact).getFirstName());
+		return	name.getFirstName().compareToIgnoreCase(((Contact) newContact).getName().getFirstName());
 			
 			
 			
