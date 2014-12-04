@@ -5,6 +5,10 @@ import java.io.Serializable;
  *
  */
 public class Contact implements Comparable<Contact>, Serializable   {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String emailAddress;
 	private String phoneNumber;
 	private String note;

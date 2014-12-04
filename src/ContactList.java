@@ -8,6 +8,10 @@ import java.util.Scanner;
  */
 
 public class ContactList implements  Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final int FINAL_LIST_SIZE = 10;
 	//private Scanner scan = new Scanner(System.in);
 	private Contact[] allContacts;
@@ -137,15 +141,13 @@ public class ContactList implements  Serializable {
 	public String getContactByLastName(String parLastName) {
 		String tempString="";
 		System.out.println(allContacts);
-		for (int j =0; j<allContacts.length;j++){
-			System.out.println("Array is " + allContacts[j].getName().getLastName());
-		//System.out.println(allContacts[j].getName().getLastName().compareToIgnoreCase(parLastName));
-			//if (allContacts[i].getName().getLastName().compareToIgnoreCase(parLastName)==0){
-				//tempString+=allContacts[j]+"\n";
-			System.out.println(allContacts[j].getName().getLastName());
-			tempString+=allContacts[j]+"\n";
-			//}
-		}
+		for (int j =0; j<counter;j++){
+		System.out.println(allContacts[j].getName().getLastName().compareToIgnoreCase(parLastName));
+			if (allContacts[j].getName().getLastName().compareToIgnoreCase(parLastName)==0){
+				tempString+=allContacts[j]+"\n";
+			//tempString+=allContacts[j]+"\n";
+			
+		}}
 		return tempString;
 	}
 

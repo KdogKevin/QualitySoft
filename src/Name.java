@@ -4,6 +4,10 @@ import java.io.Serializable;
  * One object of Name stores the First and last name of a name Object
  */
 public class Name implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
 

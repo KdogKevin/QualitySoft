@@ -6,14 +6,13 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.io.Serializable;
 
 /*
  * Class Main creates an empty contact list and then calls methods to add to the contact list.  It also
  * prints out the contact list.
  */
-public class Main implements Serializable {
+public class Main {
 
 	public static void main(String[] args) {
 		/* Call method to create contact list */
