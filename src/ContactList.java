@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
@@ -6,9 +7,9 @@ import java.util.Scanner;
  *
  */
 
-public class ContactList {
+public class ContactList implements  Serializable {
 	private final int FINAL_LIST_SIZE = 10;
-	private Scanner scan = new Scanner(System.in);
+	//private Scanner scan = new Scanner(System.in);
 	private Contact[] allContacts;
 	private static int counter = 0;
 
@@ -33,32 +34,41 @@ public class ContactList {
 		Contact tempContact = new Contact();
 		if (!(counter >= FINAL_LIST_SIZE)) {
 			System.out.println("What is the last name?");
-			String lastName = scan.nextLine();
+			//String lastName = scan.nextLine();
+			String lastName = getNextInput();
 			if (!(lastName.equals(""))) {
 				System.out.println("What is the first name?");
-				String firstName = scan.nextLine();
+				//String firstName = scan.nextLine();
+				String firstName = getNextInput();
+
 				Name contactName;
 				contactName = new Name(firstName, lastName);
 
 				tempContact.setName(contactName);
 
 				System.out.println("What is the email");
-				tempContact.setEmail(scan.nextLine());
+				//tempContact.setEmail(scan.nextLine());
+				tempContact.setEmail(getNextInput());
 				System.out.println("what is the phone number");
-				tempContact.setPhone(scan.nextLine());
-
+				//tempContact.setPhone(scan.nextLine());
+				tempContact.setPhone(getNextInput());
 				StreetAddress xStreetAddress;
 				xStreetAddress = new StreetAddress();
 				System.out.println("What is the House number");
-				String house = scan.nextLine();
+			String house = getNextInput();
 				System.out.println("What is the city ");
-				String city = scan.nextLine();
+				//String city = scan.nextLine();
+				String city = getNextInput();
 				System.out.println("What is the state");
-				String state = scan.nextLine();
+				//String state = scan.nextLine();
+				String state = getNextInput();
+
 				System.out.println("What is the zip");
-				String zip = scan.nextLine();
+				//String zip = scan.nextLine();
+				String zip = getNextInput();
 				System.out.println("" + "What is the country");
-				String country = scan.nextLine();
+				//String country = scan.nextLine();
+				String country = getNextInput();
 				xStreetAddress.setHouse(house);
 				xStreetAddress.setCity(city);
 				xStreetAddress.setState(state);
@@ -68,10 +78,12 @@ public class ContactList {
 				// System.out.println(xStreetAddress);
 				System.out
 						.println("Do you want to enter a Note for the contact (Y/N)");
-				String setNote = scan.nextLine();
+				//String setNote = scan.nextLine();
+				String setNote = getNextInput();
 				if (setNote.equalsIgnoreCase("y")) {
 					System.out.println("Please enter in the note.");
-					tempContact.setNote(scan.nextLine());
+					//tempContact.setNote(scan.nextLine());
+					tempContact.setNote(getNextInput());
 				} else {
 					tempContact.setNote("");
 				}
@@ -110,8 +122,8 @@ public class ContactList {
 		String contactListString = "";
 
 		for (int i = 1; i <= counter; i++) {
-
-			contactListString += "\n" + i + ")" + allContacts[i - 1];
+			
+			contactListString += "\n\n" + i + ")" + allContacts[i - 1];
 
 		}
 		return contactListString;
@@ -124,14 +136,16 @@ public class ContactList {
 	 */
 	public String getContactByLastName(String parLastName) {
 		String tempString="";
-		for (int i =0; i<allContacts.length;i++){
-		System.out.println(allContacts[i].getName().getLastName().compareToIgnoreCase(parLastName));
-			if (allContacts[i].getName().getLastName().compareToIgnoreCase(parLastName)==0){
-				tempString+=allContacts[i]+"\n";
-			}
+		System.out.println(allContacts);
+		for (int j =0; j<allContacts.length;j++){
+			System.out.println("Array is " + allContacts[j].getName().getLastName());
+		//System.out.println(allContacts[j].getName().getLastName().compareToIgnoreCase(parLastName));
+			//if (allContacts[i].getName().getLastName().compareToIgnoreCase(parLastName)==0){
+				//tempString+=allContacts[j]+"\n";
+			System.out.println(allContacts[j].getName().getLastName());
+			tempString+=allContacts[j]+"\n";
+			//}
 		}
-
-
 		return tempString;
 	}
 
@@ -154,5 +168,10 @@ public class ContactList {
 		System.out.println("In method getContactByZip");
 
 		return "";
+	}
+	
+	public String getNextInput(){
+		Scanner scan = new Scanner(System.in);
+		return scan.nextLine();
 	}
 }

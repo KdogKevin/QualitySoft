@@ -1,8 +1,10 @@
+import java.io.Serializable;
+
 /**
  * One object of a StreetAddress stores the information for an address
  *
  */
-public class StreetAddress {
+public class StreetAddress implements Serializable  {
 	private String house;
 	private String city;
 	private String state;
@@ -15,7 +17,7 @@ public class StreetAddress {
 	public StreetAddress() {
 		// System.out.println("In streetAddress constructor");
 
-		// assign users input to datamembers
+		// assign users input to data members
 	}
 
 	/**

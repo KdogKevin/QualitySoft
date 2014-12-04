@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * One object of Name stores the First and last name of a name Object
  */
-public class Name {
+public class Name implements Serializable {
 	private String firstName;
 	private String lastName;
 

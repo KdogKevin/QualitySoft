@@ -1,8 +1,10 @@
+import java.io.Serializable;
+
 /**
  * One Object of a Contact Stores the info for a single contact
  *
  */
-public class Contact implements Comparable {
+public class Contact implements Serializable   {
 	private String emailAddress;
 	private String phoneNumber;
 	private String note;
