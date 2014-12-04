@@ -18,7 +18,8 @@ public class Main {
 		/* Call method to create contact list */
 		ContactList allContacts;
 		allContacts = new ContactList();
-		allContacts = load(allContacts);
+		allContacts= null;
+		allContacts = load();
 		System.out.println("Printing out the loaded Contact list");
 		System.out.println(allContacts);
 
@@ -70,16 +71,16 @@ public class Main {
 	 * This method reads a contactList that was saved on the disk and returns a
 	 * ContactList.
 	 */
-	public static ContactList load(ContactList tempContactList) {
+	public static ContactList load() {
 		System.out.println("Load called");
-		// ContactList readContactList;
-		// readContactList = new ContactList();
+		 ContactList readContactList;
+		 readContactList = new ContactList();
 		FileInputStream inFile;
 		ObjectInputStream inObject;
 		try {
 			inFile = new FileInputStream("data");
 			inObject = new ObjectInputStream(inFile);
-			tempContactList = (ContactList) inObject.readObject();
+			readContactList = (ContactList) inObject.readObject();
 			inFile.close();
 			inObject.close();
 		} catch (IOException ioe) {
@@ -88,8 +89,8 @@ public class Main {
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("Error in casting to ContactList: " + cnfe);
 		}
-		System.out.println(tempContactList);
-		return tempContactList;
+		System.out.println(readContactList);
+		return readContactList;
 
 		/*
 		 * ContactList testLoadContacts; testLoadContacts = new ContactList();
@@ -102,11 +103,8 @@ public class Main {
 	 */
 	public static void save(ContactList newContactList) {
 		System.out.println("Save called");
-
 		FileOutputStream outFile;
-		System.out.println("just did FileOutputStream");
 		ObjectOutputStream outObject;
-		System.out.println("just did ObjectOutputStream");
 		try {
 			outFile = new FileOutputStream("data");
 			outObject = new ObjectOutputStream(outFile);
@@ -120,8 +118,8 @@ public class Main {
 		}
 		System.out.println("test out the write file by loading it again.");
 		ContactList testallContacts;
-		testallContacts = new ContactList();
-		testallContacts = load(testallContacts);
+		//testallContacts = new ContactList();
+		testallContacts = load();
 		System.out.println("Printing out the loaded Contact list");
 		System.out.println(testallContacts);
 	}
@@ -129,7 +127,6 @@ public class Main {
  * this method prints a menu and gets the menu input from the user.
  */
 	public static int getMenuInput() {
-		int tempChoice;
 		Scanner kboard = new Scanner(System.in);
 
 		System.out.println("---MENU---");

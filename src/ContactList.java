@@ -110,11 +110,9 @@ public class ContactList implements  Serializable {
 	 * Sorts the ContactList by last name
 	 */
 	public void sort() {
-
+		System.out.println("In method sort");
 		Arrays.sort(allContacts);
 		
-		System.out.println("In method sort");
-
 	}
 
 	/**
@@ -140,14 +138,14 @@ public class ContactList implements  Serializable {
 	 */
 	public String getContactByLastName(String parLastName) {
 		String tempString="";
-		System.out.println(allContacts);
 		for (int j =0; j<counter;j++){
-		System.out.println(allContacts[j].getName().getLastName().compareToIgnoreCase(parLastName));
 			if (allContacts[j].getName().getLastName().compareToIgnoreCase(parLastName)==0){
-				tempString+=allContacts[j]+"\n";
-			//tempString+=allContacts[j]+"\n";
-			
-		}}
+				tempString+=allContacts[j]+"\n";			
+		}
+		}
+		if (tempString == ""){
+			System.out.println("Contact is not in the contact list.");
+		}
 		return tempString;
 	}
 
@@ -158,7 +156,16 @@ public class ContactList implements  Serializable {
 	public String getContactByEmail(String parEmail) {
 
 		System.out.println("In method getContactByEmail");
-		return "";
+		String tempEmailString="";
+		for (int k =0; k<counter;k++){
+			if (allContacts[k].getEmailAddress().compareToIgnoreCase(parEmail)==0){
+				tempEmailString+=allContacts[k]+"\n";			
+		}
+		}
+		if (tempEmailString == ""){
+			System.out.println("Contact is not in the contact list.");
+		}
+		return tempEmailString;
 	}
 
 	/**
