@@ -4,7 +4,7 @@ import java.io.Serializable;
  * One Object of a Contact Stores the info for a single contact
  *
  */
-public class Contact implements Serializable   {
+public class Contact implements Comparable<Contact>, Serializable   {
 	private String emailAddress;
 	private String phoneNumber;
 	private String note;
@@ -107,7 +107,7 @@ public class Contact implements Serializable   {
 	 * less, returns 0 if they are the same, returns greater than 0 if it is
 	 * larger
 	 */
-	public int compareTo(Object newContact) {
+	public int compareTo(Contact newContact) {
 		
 		int	lastNameCompare= name.getLastName().compareToIgnoreCase( ((Contact) newContact).getName().getLastName());
 		if (0!=lastNameCompare){

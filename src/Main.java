@@ -27,26 +27,7 @@ public class Main implements Serializable {
 		 * Asks the user what action is needed to be done
 		 */
 		int menuChoice;
-		// Scanner scan;
-		// scan = new Scanner(System.in);
-		// Scanner scan = new Scanner(System.in);
-		/*
-		 * allContacts.createContact(); System.out.println(allContacts);
-		 * System.out.println("\n"); allContacts.createContact();
-		 * System.out.println(allContacts);
-		 */
-		/*
-		 * Scanner kboard = new Scanner(System.in); do{
-		 * System.out.println("---MENU---");
-		 * System.out.println("What would you like to do?");
-		 * System.out.println("1) Create a new contact "); System.out
-		 * .println("2) print sorted list of contacts");
-		 * System.out.println("3) Search for a contact by using a last name");
-		 * System.out.println("4) Search for a contact by using an email");
-		 * System.out.println("5) Search for a contact by using a zip code");
-		 * System.out.println("0) Quit"); System.out.print("-----> ");
-		 * menuChoice = scan.nextInt();
-		 */
+		
 		do {
 			menuChoice = getMenuInput();
 
@@ -62,14 +43,19 @@ public class Main implements Serializable {
 			case 3:
 				System.out.println("Enter a contact last name");
 				// System.out.println(allContacts.getContactByLastName(scan.next()));
+				 System.out.println(allContacts.getContactByLastName(getNextInput()));
 				break;
 			case 4:
 				System.out.println("Enter a contact email");
 				// System.out.println(allContacts.getContactByEmail(scan.next()));
+				 System.out.println(allContacts.getContactByEmail(getNextInput()));
+
 				break;
 			case 5:
 				System.out.println("Enter a contact zip");
 				// System.out.println(allContacts.getContactByZip(scan.next()));
+				 System.out.println(allContacts.getContactByZip(getNextInput()));
+
 				break;
 			case 0:
 				// implement save method later
@@ -140,7 +126,9 @@ public class Main implements Serializable {
 		System.out.println("Printing out the loaded Contact list");
 		System.out.println(testallContacts);
 	}
-
+/*
+ * this method prints a menu and gets the menu input from the user.
+ */
 	public static int getMenuInput() {
 		int tempChoice;
 		Scanner kboard = new Scanner(System.in);
@@ -155,6 +143,13 @@ public class Main implements Serializable {
 		System.out.println("0) Quit");
 		System.out.print("-----> ");
 		return kboard.nextInt();
+	}
+	/*
+	 * This method reads the next line the user inputs from the user.
+	 */
+	public static String getNextInput(){
+		Scanner scan = new Scanner(System.in);
+		return scan.nextLine();
 	}
 }
 /*
