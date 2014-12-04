@@ -2,12 +2,9 @@ import java.io.Serializable;
 
 /**
  * One object of a StreetAddress stores the information for an address
- *
+ * 
  */
-public class StreetAddress implements Serializable  {
-	/**
-	 * 
-	 */
+public class StreetAddress implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String house;
 	private String city;
@@ -19,9 +16,7 @@ public class StreetAddress implements Serializable  {
 	 * constructs a street address object
 	 */
 	public StreetAddress() {
-		// System.out.println("In streetAddress constructor");
-
-		// assign users input to data members
+		// put something in here
 	}
 
 	/**
@@ -64,21 +59,24 @@ public class StreetAddress implements Serializable  {
 	}
 
 	/**
+	 * This method returns the zip of the object StreetAddress
+	 */
+	public String getZip() {
+		return zip;
+	}
+
+	/**
 	 * returns a formatted string object of the StreetAddress
 	 */
 	public String toString() {
 		String tempString = "";
-		// return house + "\n" + city + ", " + state + " " + zip + "\n" +
-		// country;
 		if (!(house.equals(""))) {
 			tempString = tempString + house + "\n";
 		}
 		if (!(city.equals(""))) {
 			if (!(state.equals(""))) {
-				// System.out.println("State is " + state);
 				tempString = tempString + city + ", " + state + " ";
 			} else {
-				// System.out.println("State is " + state);
 				tempString = tempString + city + " ";
 			}
 		} else {
@@ -93,6 +91,5 @@ public class StreetAddress implements Serializable  {
 		}
 		return tempString;
 	}
-	/* Include methods to set all of the variables for all of the address */
 
 }

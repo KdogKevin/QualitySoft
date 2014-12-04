@@ -2,9 +2,9 @@ import java.io.Serializable;
 
 /**
  * One Object of a Contact Stores the info for a single contact
- *
+ * 
  */
-public class Contact implements Comparable<Contact>, Serializable   {
+public class Contact implements Comparable<Contact>, Serializable {
 	/**
 	 * 
 	 */
@@ -21,7 +21,6 @@ public class Contact implements Comparable<Contact>, Serializable   {
 	public void setEmail(String newEmail) {
 
 		emailAddress = newEmail;
-		// System.out.println("setEmail called");
 	}
 
 	/**
@@ -29,7 +28,6 @@ public class Contact implements Comparable<Contact>, Serializable   {
 	 */
 	public void setPhone(String newPhone) {
 		phoneNumber = newPhone;
-		// System.out.println("setPhone called");
 	}
 
 	/**
@@ -37,7 +35,6 @@ public class Contact implements Comparable<Contact>, Serializable   {
 	 */
 	public void setNote(String newNote) {
 		note = newNote;
-		// System.out.println("setNote called");
 
 	}
 
@@ -47,7 +44,6 @@ public class Contact implements Comparable<Contact>, Serializable   {
 	public void setName(Name newName) {
 
 		name = newName;
-		// System.out.println("setName called");
 
 	}
 
@@ -57,30 +53,35 @@ public class Contact implements Comparable<Contact>, Serializable   {
 	public void setAddress(StreetAddress newStreetAddress) {
 
 		streetAddress = newStreetAddress;
-		// System.out.println("setAddress called");
 
 	}
-	
+
 	/**
 	 * This method returns the email of the Contact
 	 */
 	public String getEmailAddress() {
 		return emailAddress;
 	}
+
 	/**
 	 * This method returns the name of the Contact
 	 */
-	public Name getName(){
+	public Name getName() {
 		return name;
 	}
-	
+
+	/**
+	 * This method returns the streetAdress of the Contact
+	 */
+	public StreetAddress getStreetAddress() {
+		return streetAddress;
+	}
 
 	/**
 	 * returns a contact object in a formatted String
 	 */
 	public String toString() {
 		String tempString = "";
-		// System.out.println("in method toString in Contact ");
 		if (name.getFirstName().equals("")) {
 			tempString = tempString + "\n" + name.getLastName();
 		} else {
@@ -102,8 +103,6 @@ public class Contact implements Comparable<Contact>, Serializable   {
 
 		return tempString;
 
-		// return name+"\n"+ streetAddress+"\n"+ emailAddress +"\n"+
-		// phoneNumber;
 	}
 
 	/**
@@ -112,16 +111,14 @@ public class Contact implements Comparable<Contact>, Serializable   {
 	 * larger
 	 */
 	public int compareTo(Contact newContact) {
-		
-		int	lastNameCompare= name.getLastName().compareToIgnoreCase( ((Contact) newContact).getName().getLastName());
-		if (0!=lastNameCompare){
+		int lastNameCompare = name.getLastName().compareToIgnoreCase(
+				newContact.getName().getLastName());
+		if (0 != lastNameCompare) {
 			return lastNameCompare;
-		}
-		else {
-		return	name.getFirstName().compareToIgnoreCase(((Contact) newContact).getName().getFirstName());
-			
-			
-			
+		} else {
+			return name.getFirstName().compareToIgnoreCase(
+					newContact.getName().getFirstName());
+
 		}
 	}
 }

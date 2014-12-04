@@ -15,10 +15,8 @@ public class Name implements Serializable {
 	 * this constructs a Name object with given First and last names in
 	 * parameters
 	 */
-	Name(String newFirstName, String newLastName) {
-		// System.out.println("first and last name assigned in constructor");
+	public Name(String newFirstName, String newLastName) {
 		firstName = newFirstName;
-
 		lastName = newLastName;
 	}
 
@@ -26,14 +24,14 @@ public class Name implements Serializable {
 	 * Set the firstName to the input newFirstName
 	 */
 	public void setFirstName(String newFirstName) {
-		// only used if wants to change later
+		firstName = newFirstName;
 	}
 
 	/**
 	 * Set the lastName to the input newLastName
 	 */
 	public void setLastName(String newLastName) {
-		// only used if wants to change later
+		lastName = newLastName;
 	}
 
 	/**
