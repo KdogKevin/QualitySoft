@@ -8,13 +8,11 @@ import java.util.Scanner;
  */
 
 public class ContactList implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private final int FINAL_LIST_SIZE = 10;
 	private Contact[] allContacts;
 	private int counter = 0;
+	private Contact tempContact = new Contact();
 
 	/**
 	 * Constructor for ContactList where we will create the contactList array
@@ -31,6 +29,101 @@ public class ContactList implements Serializable {
 	 * 
 	 */
 	public void createContact() {
+		
+		if (!(counter >= FINAL_LIST_SIZE)) {
+			if (readName() == true) {
+				readStreetAddress();
+				readOtherInfo();
+				saveToContactList();
+			} else {
+				System.out
+						.println("You must enter a contact's last name in order for a contact to be entered.");
+			}
+
+		} else {
+			System.out
+					.println("Contact can't be added.  Contact list is full.");
+		}
+	}
+		
+	/**
+	 * This method prompts the user for the lastname, if no last name is entered it returns false. 
+	 * If entered then prompts the user for firstname and then stores the names for the contact in a 
+	 * name object 	
+	 */
+		
+	public boolean readName(){
+		System.out.println("What is the last name?");
+		String lastName = getNextInput();
+		if (!(lastName.equals(""))) {
+			System.out.println("What is the first name?");
+			String firstName = getNextInput();
+
+			Name contactName;
+			contactName = new Name(firstName, lastName);
+
+			tempContact.setName(contactName);
+			return true;
+		}else {
+			return false;
+		}
+	} 
+	/**
+	 * This method prompts the user for address info and then stores the address info for the contact in a 
+	 * StreetAddress object 	
+	 */
+		
+	public void readStreetAddress(){
+		StreetAddress xStreetAddress;
+		xStreetAddress = new StreetAddress();
+		System.out.println("What is the House number?");
+		String house = getNextInput();
+		System.out.println("What is the city?");
+		String city = getNextInput();
+		System.out.println("What is the state?");
+		String state = getNextInput();
+
+		System.out.println("What is the zip?");
+		String zip = getNextInput();
+		System.out.println("" + "What is the country?");
+		String country = getNextInput();
+		xStreetAddress.setHouse(house);
+		xStreetAddress.setCity(city);
+		xStreetAddress.setState(state);
+		xStreetAddress.setZip(zip);
+		xStreetAddress.setCountry(country);
+		tempContact.setAddress(xStreetAddress);
+	}
+	/**
+	 * This method prompts the user for email, phone-number and Note (if wanted), then stores the info in the contact object 	
+	 */
+		
+	public void readOtherInfo() {
+		System.out.println("What is the email");
+		tempContact.setEmail(getNextInput());
+		System.out.println("what is the phone number");
+		tempContact.setPhone(getNextInput());
+		System.out.println("Do you want to enter a Note for the contact (Y/N)");
+		String setNote = getNextInput();
+		if (setNote.equalsIgnoreCase("y")) {
+			System.out.println("Please enter in the note.");
+			tempContact.setNote(getNextInput());
+		} else {
+			tempContact.setNote("");
+		}
+	}
+	/**
+	 * This method stores the Contact() in the next open spot in the ContactList[]
+	 */
+		
+	public void saveToContactList(){
+		allContacts[counter] = tempContact;
+		counter++;
+		tempContact = new Contact ();
+		System.out.println("Contact has been added.");
+	}
+
+	/*
 		Contact tempContact = new Contact();
 		if (!(counter >= FINAL_LIST_SIZE)) {
 			System.out.println("What is the last name?");
@@ -89,7 +182,7 @@ public class ContactList implements Serializable {
 					.println("Contact can't be added.  Contact list is full.");
 		}
 	}
-
+*/
 	/**
 	 * Sorts the ContactList by last name
 	 */

@@ -75,8 +75,7 @@ public class Main {
 			inFile.close();
 			inObject.close();
 		} catch (IOException ioe) {
-			System.out.println("Error reading from the file: "
-					+ ioe.getMessage());
+			System.out.println("A new Contact List has been opened.");
 		} catch (ClassNotFoundException cnfe) {
 			System.out.println("Error in casting to ContactList: " + cnfe);
 		}
