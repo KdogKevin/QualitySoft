@@ -13,13 +13,6 @@ public class StreetAddress implements Serializable {
 	private String country;
 
 	/**
-	 * constructs a street address object
-	 */
-	public StreetAddress() {
-		// put something in here
-	}
-
-	/**
 	 * Sets the house data member to the parameter newHouse
 	 */
 	public void setHouse(String newHouse) {
@@ -70,8 +63,12 @@ public class StreetAddress implements Serializable {
 	 */
 	public String toString() {
 		String tempString = "";
-		if (!(house.equals(""))) {
+		if (!(house.equals(""))
+				&& ((!city.equals("") || (!state.equals(""))
+						|| (!zip.equals("")) || (!country.equals(""))))) {
 			tempString = tempString + house + "\n";
+		} else if (!(house.equals(""))) {
+			tempString = tempString + house;
 		}
 		if (!(city.equals(""))) {
 			if (!(state.equals(""))) {
@@ -80,8 +77,9 @@ public class StreetAddress implements Serializable {
 				tempString = tempString + city + " ";
 			}
 		} else {
-
-			tempString = tempString + state + " ";
+			if (!(state.equals(""))) {
+				tempString = tempString + state + " ";
+			}
 		}
 		if (!(zip.equals(""))) {
 			tempString = tempString + zip + " ";

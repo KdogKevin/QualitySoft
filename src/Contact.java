@@ -91,12 +91,18 @@ public class Contact implements Comparable<Contact>, Serializable {
 		if (!(streetAddress.equals(""))) {
 			tempString = tempString + "\n" + streetAddress;
 		}
-		if (!(emailAddress.equals(""))) {
+		if (!(emailAddress.equals("")) && (!(streetAddress.equals("")))) {
 			tempString = tempString + "\n" + emailAddress;
+		} else if (!(emailAddress.equals(""))) {
+			tempString = tempString + emailAddress;
 		}
-		if (!(phoneNumber.equals(""))) {
+		if (!(phoneNumber.equals("")) && (!(streetAddress.equals("")))) {
 			tempString = tempString + "\n" + phoneNumber;
+		} else if (!(phoneNumber.equals(""))) {
+
+			tempString = tempString + phoneNumber;
 		}
+
 		if (!(note.equals(""))) {
 			tempString = tempString + "\n" + "Note: " + note;
 		}
